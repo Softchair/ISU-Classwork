@@ -1,0 +1,34 @@
+List Iterator Method 	Returns
+---------------------------------------------------------- 
+
+int nextIndex()		index of element after the cursor; 
+			size() if at the end 
+int previousIndex()	index of element before the cursor; 
+			-1 if at the beginning
+
+boolean hasNext()	nextIndex() < size 
+boolean hasPrevious()	previousIndex() > 0
+
+E next()		returns element after the cursor 
+			and moves cursor forward 
+E previous()		returns element before the cursor,
+			and moves cursor backward
+
+
+void remove()		removes the last element returned by next()
+			or previous()
+
+			can only be called once after next() or 
+			previous(), and ListIterator.add() has not
+ 			been called in between.  
+
+void add(E item)	insert immediately before the element that
+			would be returned by next(), and after the 
+			element that would be returned by previous()
+
+void set(E item)  	replace the last element returned by next()
+			or previous(). 
+
+			can be called only if neither remove()
+			nor add() has been called after the last 
+			call to next() or previous()

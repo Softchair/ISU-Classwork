@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Getting started</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
+
+
+    <!-- Bootstrap css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./index.html">Landing page</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./gettingstarted.html">Getting Started <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./page2.html">CSS Help</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./credits.html">Credits</a>
+                      </li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="">Getting started with CSS</h1>
+                    <p class="lead text-muted">How to start styling your webpage</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-0 mx-5">
+            <h2 class="pb-4 fw-normal">Inline vs. External vs. Internal CSS</h3>
+                <p class="float-start pb-4">
+                    There are three ways to implement CSS into your webpage: Inline, External, and Internal.
+                    It is important to choose the type that will suit your webpage the best. If you are only
+                    planning on changing the style of very few elements, inline CSS might be the right choice.
+                    If you want to change the style of multiple elements on your page, internal CSS can be an
+                    appropriate option. If you want to have a consistent style throughout multiple webpages,
+                    internal will be a solid option.
+                </p>
+
+                <div>
+                    <p class="float-start">
+                    <h3 class="fw-light">Inline CSS</h3>
+                    Add the style tag to an HTML element to start modifying that element. All of your
+                    modifiers must be within double quotes
+                    </p>
+                    <figure class="figure w-auto h-auto p-1 shadow-lg" id="fig1">
+
+                    </figure>
+                </div>
+
+                <div>
+                    <p class="float-start">
+                    <h3 class="fw-light">External CSS</h3>
+                    Create a new file with the extension ".css". To change the style of the element, start by
+                    typing the name of the tag, id, or class followed by brackets. All of the CSS modifiers for
+                    that specific element or group of elements must be on separate lines within the brackets
+                    </p>
+                    <figure class="figure w-auto h-auto p-1 shadow-lg" id="fig2">
+                    </figure>
+                </div>
+
+                <div>
+                    <p class="float-start">
+                    <h3 class="fw-light">Internal CSS</h3>
+                    Internal CSS is very similar to external css, with the difference being that all of the css is
+                    written within the html file of the webpage.
+                    </p>
+                    <figure class="figure w-auto h-auto p-1 shadow-lg" id="fig3">
+
+                    </figure>
+                </div>
+
+
+        </section>
+
+
+    </main>
+
+    <footer class="text-muted py-5">
+        <div class="container">
+            <p class="float-end mb-1">
+                <a href="./credits.html">Credits</a>
+            </p>
+            <p class="mb-1"></p>
+        </div>
+    </footer>
+
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="./index.js"></script>
+
+    <script type="text/javascript">
+        fetch("data.json")
+            .then(response => response.json())
+            .then(data => dataToHTML(data));
+
+        function dataToHTML(data) {
+            let fig1 = document.getElementById('fig1');
+            let fig2 = document.getElementById('fig2');
+            let fig3 = document.getElementById('fig3');
+
+
+            for (let i = 0; i < data.images.length; i++) {
+                let path = data.images[i].imagePath;
+                let caption = data.images[i].imageCaption;
+                let imgAlt = data.images[i].imageAlt;
+                let name = data.images[i].imageName;
+
+
+                switch (i) {
+                    case 0:
+                        addToPage(fig1, path, caption, imgAlt, name);
+                        break;
+                    case 1:
+                        addToPage(fig2, path, caption, imgAlt, name);
+                        break;
+                    case 2:
+                        addToPage(fig3, path, caption, imgAlt, name);
+                        break;
+                }
+            }
+        }
+
+        function addToPage(fig, path, caption, imgAlt, name) {
+            let myimg = document.createElement("img");
+            let mycaption = document.createElement("figcaption");
+
+            myimg.innerHTML = `
+            <img src=${path} alt=${imgAlt} class="img-fluid"
+            `;
+
+            myimg.setAttribute('src', path);
+
+            console.log(path);
+
+            mycaption.innerHTML = `
+            <figcaption class="figure-caption text-center w-auto">${caption}</figcaption>
+            `
+            fig.appendChild(myimg);
+            fig.appendChild(mycaption);
+        }
+
+    </script>
+
+</body>
+
+</html>

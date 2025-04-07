@@ -1,0 +1,35 @@
+12 23 4 3 7 11 2 ^ / - ^ * 25 % + 
+3 4 2 * 1 5 - 2 3 ^ ^ / + 
+Error: no subexpression detected ()
+-69 
+-4 -20 - 
+
+
+
+Error: too many operators (^)
+Error: too many operators (^)
+6 ^ 
+Error: too many operators (%)
+5 5 + 
+
+
+
+Error: too many operands (45)
+Error: too many operands (-5)
+Error: too many operands (2)
+
+
+Error: no opening parenthesis detected
+Error: no subexpression detected ()
+Error: too many operators (+)
+
+
+Error: no closing parenthesis detected
+Error: too many operands (4)
+Error: no subexpression detected ()
+
+
+
+Error: no subexpression detected ()
+Error: no subexpression detected ()
+Error: no subexpression detected ()

@@ -1,0 +1,20 @@
+		Binary Heap 		List/Array		List/Array
+ 					 (sorted)		(unsorted)
+
+peek()		   O(1)			   O(1)			   O(n)
+
+add()		 		   
+  worst	           O(log n)*		   O(n)                    O(1)*
+  best		   O(1)*		   O(1)*                   O(1)*
+
+remove()
+  worst		   O(log n)                O(n)                    O(n)
+  best             O(1)                    O(1)**                  O(n)
+
+
+
+
+* Amorized time in case an array is used. If you run out of room on the array, 
+  double it each time. 
+
+** Keep the array sorted from largest to smallest. 

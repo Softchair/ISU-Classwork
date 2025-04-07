@@ -1,0 +1,10 @@
+if( sensor_data -> bumpLeft == 1 || sensor_data -> bumpRight == 1 ||  sensor_data -> cliffLeftSignal < 100 || sensor_data -> cliffFrontLeftSignal < 100 || sensor_data -> cliffRightSignal < 100 || sensor_data -> cliffFrontRightSignal < 100 ||
+                sensor_data -> cliffLeftSignal > 2600 || sensor_data -> cliffFrontLeftSignal > 2600 || sensor_data -> cliffRightSignal > 2600 || sensor_data -> cliffFrontRightSignal > 2600 ){
+
+            oi_setWheels(0,0); //stop
+            char Send_String[100];
+
+            sprintf(Send_String, "Moved forward:\t%f\n\r",totalDistance);
+
+            uart_sendStr(Send_String);
+}

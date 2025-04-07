@@ -1,0 +1,26 @@
+{
+  "name": "node14_mern_backend",
+  "version": "1.0.0",
+  "description": "MERN",
+  "main": "index.js",
+  "scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+  "mern",
+  "node",
+  "express",
+  "mongoose",
+  "react"
+  ],
+  "author": "Kaden W",
+  "license": "ISC",
+  "dependencies": {
+  "cors": "^2.8.5",
+  "express": "^4.18.2",
+  "mogoose": "^0.0.1-security",
+  "mongoose": "^7.0.4"
+  }
+  }
+
+  

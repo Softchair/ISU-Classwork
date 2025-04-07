@@ -1,0 +1,138 @@
+Welcome to COMS 228 - Lecture 2
+
+COMS 228 is about
+- abstract data types
+Def:
+A collection of objects together with operations we can 
+perform on these objects
+Meaning: we can use a "bag" of objects without
+worrying what the "bag" looks like.
+
+The implementation is invisible.
+Before OOP, we had structural/procedural paradigm.
+Instead we had nested procedures.
+
+Enforced abstraction through?:
+interface is what enforces abstraction in abstract
+
+Interface is a CONTRACT that ONLY specifies WHAT we will do and NOT how we will do it.
+
+-Perfect for teamwork where a team lead can assign functionality to team members without having to know how it is accomplished.
+
+Very large projects:
+What is the difference between software engineering and 
+other types of engineering?!
+
+-we cannot measure accurately the load-bearing properties of a software project.
+-if I am building a bridge, I know that the load-bearing steel endures 40 tons with no structural damage - this will be true of any element I put in the bridge - I know how much the solder will bear, what temperature it will endure, etc.
+
+-Software engineering is an ART at this point in history. - 2021.
+
+-failure-proofing is the job of the creator.
+
+To add guard-rails we use information hiding and encapsulation.
+
+- evaluating efficiency of data structures so we can 
+choose which one(s) to employ
+Example:
+- estimates do not always work - they tend to fail for the extra-large project size.
+
+-difficulty scales non-linearly with project size.
+
+Super-programmers - these are *real* geniuses - they are as productive as 5 average software engineers.  And an average software engineer is as productive as more than 5 bad software engineers.
+
+It is possible to meet a person who is a one-man-army of software development.  What these people can do is visualize an entire large project.
+
+Selection of data structures by evaluating their pros and cons.
+
+Example:
+Simple software system for University ID tracking at ISU.
+define it in the abstract:
+-needs to contain unique ISU IDs
+*add() - i can work with the "list"
+-remove() - not necessary for the 1st iteration - I don't have have remove() to have a minimally working system
+edit() not necessary for a minimally working system
+-get() / synonym for
+*contains()
+*size()
+
+This is an ADT 
+add, contains, size. + a "collection" of unique ids
+
+//ADT:
+interface ISU_ID_System {
+
+	boolean add(int ID);
+	boolean contains (int ID);
+	int size();
+}
+
+Let's do two implementations of the ID system:
+
+Array implementation:
+
+Why is array (of integers) not an ADT?! but ArrayList is a ADT - it does not contain operations defined on the objects.
+
+Two ways to implement my simple ID system with array:
+
+In both cases I need to implement contains()
+
+a sorted array
+an unsorted array
+
+
+size: have a private int numberIDs
+
+size() {
+	return numberIDs; //keeps track of how many 	//non-empty elements
+}
+
+add:  sorted array: add the element in it correct place
+			-go through each element in the sequence while currentID < element;
+			*how many operations will this take in the worst case? N - size of the array (linear time)
+			-increment numberIDs;
+	  unsorted array: add at numberIDs++: this takes 1 operation
+			
+contains:
+	   unsorted array: go through each element to check if it is the one we are looking for
+	   worst case: numberIDs, for a full array this is N
+	   sorted array: use binary search to find the element  logN computer instruction in the worst case.
+
+			good for freq adds
+			
+							good for frequent lookup
+            Unsorted     Sorted
+add()       1 op         N ops where N is array size
+contains()  N ops        logN ops
+size()      1 op         1 op
+
+logN grows very very very slowly compared to N
+
+if N is 1000 logN is 10
+   N is 1 Million  logN is 20
+   N is 1 Billion  logN is 30
+
+
+
+
+
+
+Goal: reduce the impact of change
+-Modularity
+-Abstraction
+
+Objects have:
+-state
+-identity
+-operations
+
+Principles of OOP:  we want to minimize the impact of editing our software: Ideally we want the edit to the software to be done in 1 location only - this is the "ideal"
+-Encapsulation  
+-Inheritance  -allows us to use heritability in the real world - in particular, most elements of reality are involved in hierarchical relationships
+-Polymorphism  - having an object know how to perform behavior on itself:
+
+Map software - ArcGIS:
+Different shapes on the map: circle, a octagon and a triangle and 57 more - instead of knowing how to calculate their areas, I am asking them to tell me what their area is - and that is pol
+
+shape.getArea() - and a octagon will calculate by own rules, and a triangle by different rules
+

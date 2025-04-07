@@ -1,0 +1,78 @@
+void Set_Right_And_Left(int Right_calibration_value_0,int Left_calibration_value_180){
+
+  //  if(){
+        right_calibration_value_0 = Right_calibration_value_0;
+  //  }
+
+  //  if(){
+        left_calibration_value_180 = Left_calibration_value_180;
+  //  }
+
+}
+
+void cyBOT_SERVO_cal(){
+
+    int Right_calibration_value_0 = 0;
+    int Left_calibration_value_180 = 0;
+
+    int numCycles = 304000;
+
+    lcd_printf("Button 1 to move left, Button 2 to move right and Button 3 to submit\n Right calibration value set 0");
+
+    // For calibrating the right side
+    while( button_getButton() != 3){
+
+        lcd_printf("Button 1 to move left, Button 2 to move right and Button 3 %d", numCycles);
+
+        if(button_getButton() == 1){
+
+            numCycles += 100;
+
+        }else if(button_getButton() == 2){
+
+            numCycles -= 100;
+
+        }
+
+        TIMER1_CTL_R &= ~0x100;
+        TIMER1_TBMATCHR_R = numCycles & 0xFFFF; //last 4 hex
+        TIMER1_TBPMR_R = (numCycles & 0xFF0000) >> 16; //first two hex
+        TIMER1_CTL_R |= 0x100;
+
+    }
+
+    Right_calibration_value_0 = numCycles;
+
+    lcd_printf("Button 1 to move left, Button 2 to move right and Button 4 to submit/n Left calibration value 180");
+    // For calibrating the left side
+    while( button_getButton() != 4){
+
+        lcd_printf("Button 1 to move left, Button 2 to move right and Button 4 to submit/n %d", numCycles);
+
+        if(button_getButton() == 1){
+
+            numCycles += 100;
+
+        }else if(button_getButton() == 2){
+
+            numCycles -= 100;
+
+        }
+
+        TIMER1_CTL_R &= ~0x100;
+        TIMER1_TBMATCHR_R = numCycles & 0xFFFF; //last 4 hex
+        TIMER1_TBPMR_R = (numCycles & 0xFF0000) >> 16; //first two hex
+        TIMER1_CTL_R |= 0x100;
+
+    }
+
+    Left_calibration_value_180 = numCycles;
+
+    char Send_String[] = " values: ";
+
+        sprintf(Send_String,"Left %d\n\rRight %d\n\r",Left_calibration_value_180,Right_calibration_value_0);
+
+        uart_sendStr(Send_String);
+
+    Set_Right_And_Left( Right_calibration_value_0, Left_calibration_value_180);
+}

@@ -1,0 +1,8 @@
+Current project outline:
+
+Tasks:
+  - Detect objects from multiple scans
+  - Detect distance of area
+  - Avoid objects
+  - Extra credit
+    - Music! (Play when scanning?)

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.84.0">
+  <title>CSS Features</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
+
+
+  <!-- Bootstrap css-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    .button {
+      left: 40%;
+      margin: 0;
+      position: relative;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="./index.html">Landing page</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./gettingstarted.html">Getting Started</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./page2.html">CSS Help <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./credits.html">Credits</a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <script src="./page2.js"></script>
+
+    <button class=button onclick="window.click()" id="input" type="button">50% chance to continue streak!</button>
+    <p class=button>
+      Current Streak: <span id="result"> </span>
+    </p>
+
+
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">CSS</h1>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="col">
+        <div class="card shadow-sm" id="img1">
+
+
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card shadow-sm" id="img2">
+  
+  
+        </div>
+      </div>
+  
+  
+      <div class="col">
+        <div class="card shadow-sm" id="img3">
+  
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </main>
+
+  <footer class="text-muted py-5">
+    <div class="container">
+      <p class="float-end mb-1">
+        <a href="./credits.html">Credits</a>
+      </p>
+      <p class="mb-1">Thanks for viewing our beautiful album</p>
+    </div>
+  </footer>
+
+
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script type="text/javascript">
+    fetch("data.json")
+      .then(response => response.json())
+      .then(data => dataToHTML(data));
+
+    function dataToHTML(data) {
+      let fig1 = document.getElementById('img1');
+      let fig2 = document.getElementById('img2');
+      let fig3 = document.getElementById('img3');
+
+
+      for (let i = 0; i < data.images.length; i++) {
+        let path = data.css[i].imagePath;
+        let caption = data.css[i].imageCaption;
+        let imgAlt = data.css[i].imageAlt;
+        let name = data.css[i].imageName;
+
+
+        switch (i) {
+          case 0:
+            addToPage(fig1, path, caption, imgAlt, name);
+            break;
+          case 1:
+            addToPage(fig2, path, caption, imgAlt, name);
+            break;
+          case 2:
+            addToPage(fig3, path, caption, imgAlt, name);
+            break;
+        }
+      }
+    }
+
+    function addToPage(fig, path, caption, imgAlt, name) {
+      let myimg = document.createElement("img");
+      let mycaption = document.createElement("div");
+
+      myimg.innerHTML = `
+        <img src=${path} alt=${imgAlt} class="img-fluid"
+        `;
+
+      myimg.setAttribute('src', path);
+
+      console.log(path);
+
+      mycaption.innerHTML = `
+          <p class="card-text">${caption}</div>
+        `;
+
+      mycaption.setAttribute('class', 'card-body');
+
+      fig.appendChild(myimg);
+      fig.appendChild(mycaption);
+    }
+
+  </script>
+
+</body>
+
+</html>

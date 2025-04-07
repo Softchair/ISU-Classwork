@@ -1,0 +1,180 @@
+1. 		
+		Locomotion l; 	 
+
+
+
+		Grasshopper g; 
+		
+
+
+2. 
+		Pollination p = new Pollination(); 
+
+
+		
+ 		Insect i = new Insect(3, "Green"); 
+
+
+		
+		Insect i = new Grasshopper(2, "Brown");  
+		
+
+		
+3. 
+		Katydid k = new Katydid(3, "Green"); 
+
+
+		Grasshopper g = k; 
+
+		
+		Locomotion l = new Katydid(3, "Brown"); 
+
+
+		g = l;    
+
+
+		// how to fix? 
+
+
+				
+
+
+
+4. 		
+		Grasshopper g = new Locust(3, "Red"); 
+
+
+
+		Katydid k = (Katydid) g;  
+
+			
+
+		g = new Mantis(4, "Green"); 
+
+
+		
+5.   
+		Locomotion l = new Katydid(3, "Brown"); 
+
+
+
+		l.attack();   
+
+		
+
+6. 
+		Locomotion l = new Locust(2, "Black"); 
+
+
+
+		l.move();  
+
+
+
+		l = new Bee(1, "Gold", "Hill"); 
+
+
+
+		l.move();  
+
+		
+
+7.   
+		Insect i = new Katydid(2, "Green"); 
+
+
+
+		i.attack(); 
+ 
+
+
+		i = new Mantis (4, "Green"); 
+
+
+
+		i.attack();  
+
+
+
+		
+8. 
+		Insect k = new Katydid(3, "Green"); 
+
+
+		
+		k.attack();  
+		
+
+
+		k.antenna(); 
+
+		
+		
+9. 
+		Grasshopper g = new Katydid(3, "Golden"); 
+
+
+
+		System.out.println(g.feedOn());   
+
+		
+		
+10. 		
+		Pollination p = new Bee(1, "Golden-Black", "Lake"); 
+
+
+		
+		p.getSwarm(); 
+
+		// ? 
+
+		
+		
+11. 		
+	    	Mantis m = new Mantis(5, "Green"); 
+
+
+
+	    	m.move();  
+
+
+
+	    	Insect i = m.preyOn(); 
+
+
+
+	    	i.move();  
+
+                // ?	
+						
+		
+12. 		
+		Insect i = new Mantis(4, "Yellow"); 
+
+
+
+		((Mantis) i).move();     
+
+
+
+		((Mantis) i).preyOn().attack();   
+
+
+
+		i = new Bee(1, "Golden-Black", "Hill"); 
+
+
+
+		((Bee) i).makeHoney();  
+		
+
+13. 
+	        Mantis m = new Mantis(4, "Green"); 
+
+
+
+        	((Insect) m).attack();  // "bite" 
+
+
+        
+	        ((Bee) ((Insect) m)).makeHoney(); 

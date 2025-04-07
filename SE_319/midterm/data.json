@@ -1,0 +1,59 @@
+{
+    "images": [
+        {
+            "imagePath": "./Images/gs1.png",
+            "imageCaption": "Inline CSS modifying a single element",
+            "imageAlt": "Inline CSS",
+            "imageName": "gs1.png"
+        },
+        {
+            "imagePath": "./Images/gs2.png",
+            "imageCaption": "External CSS uses a separate file",
+            "imageAlt": "External CSS",
+            "imageName": "gs2.png"
+        },
+        {
+            "imagePath": "./Images/gs3.png",
+            "imageCaption": "Internal CSS is written in the HTML file",
+            "imageAlt": "Internal CSS",
+            "imageName": "gs3.png"
+        }
+    ],
+    "css": [
+        {
+            "imagePath": "./Images/image1.png",
+            "imageCaption": "The Box Model is an excellent way of designing the layout of a webpage",
+            "imageAlt": "Box model",
+            "imageName": "image1.png"
+        },
+        {
+            "imagePath": "./Images/image2.png",
+            "imageCaption": "Here is a helpful image to learn every text property for CSS! These help you modify your text to be exactly how you want it to look.",
+            "imageAlt": "Helpful Image",
+            "imageName": "image2.png"
+        },
+        {
+            "imagePath": "./Images/image3.png",
+            "imageCaption": "Something with a fixed layout will not adjust the size of things to fit them on your screen. It's like you are holding a blanket with a hole cut out of it over your webpage. You can only see through that hole. A fluid webpage will change and contort itself to fit all your info on the screen.",
+            "imageAlt": "layouts",
+            "imageName": "image3.png"
+        }
+    ],
+    "tips": [
+        {
+            "num": 1,
+            "title": "Basic css",
+            "description": "Did you know that you can style CSS in the HTML file?"
+        },
+        {
+            "num": 34,
+            "title": "Gradient",
+            "description": "You can find a really nice gradiant tool at https://cssgradient.io/"
+        },
+        {
+            "num": 61,
+            "title": "CSS",
+            "description": "CSS is a really great tool to make your webpages look more professional"
+        }
+    ]
+}

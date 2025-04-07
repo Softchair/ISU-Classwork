@@ -1,0 +1,143 @@
+1. 		
+		Locomotion l; 	 // okay 
+		Grasshopper g;   // okay
+		
+
+
+2. 
+		// no instantiation of an interface variable 
+		// compile error: Cannot instantiate the type Pollination 
+		Pollination p = new Pollination(); 
+		
+		// no instantiation of an abstract class variable 
+		// compile error: Cannot instantiate the type Insect
+ 		Insect i = new Insect(3, "Green"); 
+		
+		// same instantiation error 
+		Insect i = new Grasshopper(2, "Brown");  
+		
+
+		
+3. 
+		Katydid k = new Katydid(3, "Green"); 
+
+		Grasshopper g = k; 
+		
+		Locomotion l = new Katydid(3, "Brown"); 
+
+		g = l;   // compile error: Cannot convert from Locomotion (supertype) to Grasshopper (subtype)
+
+		// how to fix? 
+		// downcast 
+		g = (Locust) l; 
+
+                g = (Katydid) l; // compile okay; ClassCastException thrown at execution
+
+
+				
+4. 		
+		Grasshopper g = new Locust(3, "Red"); 
+		Katydid k = (Katydid) g; // ClassCastException thrown at execution 
+			
+
+		// compile error: Type mismatch cannot convert from Mantis to Grasshopper 
+		g = new Mantis(4, "Green"); 
+
+
+		
+5.   
+		// static type: Locomotion 
+		// dynamic type: Katydid 
+		Locomotion l = new Katydid(3, "Brown"); 
+		l.attack();  // attack() undefined for Locomotion (static type) 
+
+		
+
+6. 
+		// static type: Locomotion (interface)
+		// dynamic type: Locust ->  Bee 
+		Locomotion l = new Locust(2, "Black"); 
+		l.move();  // "hop" - use the version for Grasshopper (closest ancestor of dynamic type)
+
+		l = new Bee(1, "Gold", "Hill"); 
+		l.move();  // "fly" - use the version for Bee (dynamic type) 
+
+		
+
+7.   
+		// static type: Insect (abstract class) 
+		// dynamic type: Katydid -> Mantis 
+		Insect i = new Katydid(2, "Green"); 
+		i.attack();  // "bite" 
+
+		i = new Mantis (4, "Green"); 
+		i.attack();  // "strike"
+
+
+
+		
+8. 
+		// static type: Insect
+		// dynamic type: Katydid 
+		Insect k = new Katydid(3, "Green"); 
+		
+		k.attack();  // "bite" 
+		
+		k.antenna(); // antenna() is undefined for Insect
+
+		
+		
+9. 
+		// static type: Grasshopper
+		// dynamic type: Katydid 
+		Grasshopper g = new Katydid(3, "Golden"); 
+		System.out.println(g.feedOn()); // "variety"  not "grass"
+
+		
+		
+10. 		
+		Pollination p = new Bee(1, "Golden-Black", "Lake"); 
+		
+		// compile error: getSwarm() undefined method for Pollination (static type)
+		p.getSwarm(); 
+
+		// how to fix? downcast 
+		((Bee) p).getSwarm();  // "Lake" 
+
+		
+		
+11. 		
+	    	Mantis m = new Mantis(5, "Green"); 
+	   	m.move();  // "crawl"
+
+	    	Insect i = m.preyOn(); 
+	    	i.move();  // compile error: move() undefined method for Insect
+
+	    	// how to fix? 
+	    	((Grasshopper) i).move();  // "hop"
+	
+						
+		
+12. 		
+		Insect i = new Mantis(4, "Yellow"); 
+		((Mantis) i).move();    // "crawl" 
+		((Mantis) i).preyOn().attack();  // preyOn() returns a Locust object; "bite" 
+
+		i = new Bee(1, "Golden-Black", "Hill"); 
+		((Bee) i).makeHoney();  // "Orange Blossom"
+		
+
+ 
+13. 
+		// upcasting a class variable to a superclass is not useful other than fooling 
+		// the compiler.  There are two reasons: 
+		// 
+		//   1. The class already inherits every method that the superclass is willing to share. 
+		//   2. In case of a call to a method, implemented by both the class and this superclass,
+		//      the version for the class is always invoked following the principle of dynamic binding. 
+        	Mantis m = new Mantis(4, "Green"); 
+        	((Insect) m).attack();  // "strike" 
+        
+        	// ClassCastException: Mantis cannot be cast to Bee
+        	((Bee) ((Insect) m)).makeHoney(); 
+
