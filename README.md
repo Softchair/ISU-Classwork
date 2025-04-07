@@ -1,2 +1,3 @@
-# ISU-Classwork
-This repository holds any random Iowa State University related classwork that doesnt need its own repo.
+# ISU_Classwork
+
+This repository holds any all my code for classes taken at ISU.

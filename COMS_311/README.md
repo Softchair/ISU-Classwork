@@ -1,2 +1,3 @@
-# COMS311
-Repo Containing all my Coms311 Coding assignments
+# COMS 311
+
+Collection of my HW from COMS 311 at ISU - Fall 2023
